@@ -32,7 +32,7 @@
     			stackMarkers[i].setMap(null);
     		}
     		for (var i = 0; i < stack.length; i++) {
-    			var myLatLng = {lat: JSON.parse(stack[i]).coordinates[0], lng: JSON.parse(stack[i]).coordinates[1]};
+    			var myLatLng = {lat: JSON.parse(stack[i]).coordinates[1], lng: JSON.parse(stack[i]).coordinates[0]};
     			var marker = new google.maps.Marker({
     			    position: myLatLng,
     			    map: map,
@@ -44,7 +44,7 @@
     	}
 		
 		function recursivo() {
-    	    myVar = setInterval(call, 10000);
+    	    myVar = setInterval(call, 3000);
     	}
 
     	function call() {
@@ -53,7 +53,7 @@
    			  url: "/get-tweets/@nickname",
    			  success: function (data) {
    				  if(data.dots.length > 0){
-   					if(stack.length >= 20){
+   					if(stack.length >= 200){
    					  	for (var i = 0; i < data.dots.length; i++) {
    							console.log("borrar");
    					  		stack.shift();

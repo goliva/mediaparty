@@ -37,8 +37,8 @@ public class RedisService {
 		Jedis jedisConnector = null;
 		try{
 			jedisConnector = jedisPool.getResource();
-			for (int i = 0; i < 20; i++) {
-				String msg = jedisConnector.rpop(nickname);
+			for (int i = 0; i < 200; i++) {
+				String msg = jedisConnector.rpop("user:"+nickname);
 				if (msg != null){
 					dots.put(msg);
 					
