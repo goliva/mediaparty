@@ -5,7 +5,7 @@
     <title>MercadoLibre workshop - MediaParty</title>
     <style>
     	#map {
-       	 height: 100%;
+       	 height: 50%;
       	}
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,26 +19,34 @@
         <span class="label">@hash</span>
     }<br>
     <div id="map"></div>
+    Aca van los tweets:<div id="tweets"></div>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="assets/javascripts/bootstrap.min.js"></script>
-    
+    <div id="tweet"><img id="img"/><div id="user"></div><div id="text"></div></div>
     <script>
     	var myVar;
 		var stack = [];
 		var stackMarkers = [];
     	
     	function renderStack() {
+    		$('#tweets').html("");
     		for (var i = 0; i < stackMarkers.length; i++) {
     			stackMarkers[i].setMap(null);
     		}
     		for (var i = 0; i < stack.length; i++) {
-    			var myLatLng = {lat: JSON.parse(stack[i]).coordinates[1], lng: JSON.parse(stack[i]).coordinates[0]};
+    			var json = JSON.parse(stack[i]);
+    			var myLatLng = {lat: json.coordinates[1], lng: json.coordinates[0]};
     			var marker = new google.maps.Marker({
     			    position: myLatLng,
     			    map: map,
     			    title: 'tweet'
     			  });
     			stackMarkers[i] = marker;
+    			var tweet = $('#tweet').clone();
+    			tweet.children('#img').attr('src',json.tweet.img);
+    			tweet.children('#text').html(json.tweet.text);
+    			tweet.children('#user').html(json.tweet.user);
+    			$('#tweets').append(tweet);
     			
     		}
     	}
