@@ -1,11 +1,12 @@
+@(nickname: String, hashes: String)
 <!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
     <title>MercadoLibre workshop - MediaParty</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="assets/pure.css" rel="stylesheet" media="screen">
-    <link href="assets/map.css" rel="stylesheet" media="screen">
+    <link href="assets/stylesheets/pure.css" rel="stylesheet" media="screen">
+    <link href="assets/stylesheets/map.css" rel="stylesheet" media="screen">
   </head>
   <body>
     <div class="header pure-u-1">
@@ -33,14 +34,16 @@
         </div>
         <div class="clear"></div>
     </div>
-    <li id="tweet"><img id="img" class="avatar" alt="" />
-      <div class="tweet-content">
-        <h5 class="tweet-user"  id="user">
-        </h5>
-        <p id="text">
-        </p>
-      </div>
-    </li>
+    <div class="hidden">
+	    <li id="tweet"><img id="img" class="avatar" alt="" />
+	      <div class="tweet-content">
+	        <h5 class="tweet-user"  id="user">
+	        </h5>
+	        <p id="text">
+	        </p>
+	      </div>
+	    </li>
+    </div>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script>
     	var myVar;
@@ -63,8 +66,8 @@
     			stackMarkers[i] = marker;
     			var tweet = $('#tweet').clone();
     			tweet.children('#img').attr('src',json.tweet.img);
-    			tweet.children('#text').html(json.tweet.text);
-    			tweet.children('#user').html(json.tweet.user);
+    			tweet.children('.tweet-content').children('#text').html(json.tweet.text);
+    			tweet.children('.tweet-content').children('.tweet-user').html(json.tweet.user);
     			$('#tweets').append(tweet);
 
     		}

@@ -1,6 +1,6 @@
 body {
-    background-color: #2D3277;
-    color: #FFFFFF;
+    background-color: #efefef;
+    
 }
 .header {
     background-color: #FFF059;
@@ -42,7 +42,7 @@ body {
 }
 
 .profile-tweets .title {
-  color: #fafafa;
+  
   border-bottom: 0.1em solid #fafafa;
   border-top: 0.1em solid #fafafa;
   padding: 0.5em;
@@ -71,7 +71,7 @@ body {
   width: 80%;
 }
 .profile-tweets .tweet-content p {
-  color: #ccc;
+  color: #666;
   font-size: 0.75em;
   margin: 0;
 }
@@ -81,7 +81,7 @@ body {
   text-decoration: none;
 }
 .profile-tweets .tweet-user {
-  color: #fafafa;
+  color: #2f86a7;
   float: right;
   font-size: 0.95em;
   font-weight: 400;
