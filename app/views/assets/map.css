@@ -1,0 +1,107 @@
+body {
+    background-color: #2D3277;
+    color: #FFFFFF;
+}
+.header {
+    background-color: #FFF059;
+    padding: 20px;
+}
+.logo {
+    float: left;
+}
+.data {
+    float: left;
+    margin-left: 20px;
+    color: #2D3277;
+}
+.clear {
+    clear: both;
+}
+.map-container {
+    padding: 20px;
+}
+#map {
+ height: 500px;
+}
+.label {
+    margin-left: 10px;
+    display: inline-block;
+}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.profile-tweets li:before,
+.profile-tweets li:after {
+  content: " ";
+  display: table;
+}
+
+.profile-tweets li:after {
+  clear: both;
+}
+
+.profile-tweets .title {
+  color: #fafafa;
+  border-bottom: 0.1em solid #fafafa;
+  border-top: 0.1em solid #fafafa;
+  padding: 0.5em;
+}
+.profile-tweets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.profile-tweets li {
+  border-bottom: 0.1em solid #fafafa;
+  border-top: 0.1em solid #fafafa;
+  padding: 0.5em;
+}
+.profile-tweets .avatar {
+  border-radius: 0.2em;
+  border: 0.1em solid #02accc;
+  float: left;
+  width: 45px;
+  height: 45px;
+}
+.profile-tweets .tweet-content {
+  float: left;
+  margin: 0;
+  margin-left: 3%;
+  width: 80%;
+}
+.profile-tweets .tweet-content p {
+  color: #ccc;
+  font-size: 0.75em;
+  margin: 0;
+}
+.profile-tweets .tweet-content p a {
+  color: #02accc;
+  cursor: pointer;
+  text-decoration: none;
+}
+.profile-tweets .tweet-user {
+  color: #fafafa;
+  float: right;
+  font-size: 0.95em;
+  font-weight: 400;
+  margin: 0 0 0.3em;
+  width: 100%;
+}
+.profile-tweets .tweet-user span {
+  color: #6b677a;
+  font-size: 75%;
+}
+.profile-tweets .tweet-handle:after {
+  content: " - ";
+}
+.map-container.pure-u-3-4 {
+    float: left;
+}
+.pure-u-1-4-over {
+    width: 24%;
+    float: left;
+    padding: 20px 0px;
+    max-height: 500px;
+    overflow: scroll;
+}
